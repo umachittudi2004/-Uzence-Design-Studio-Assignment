@@ -1,58 +1,138 @@
+# Frontend Assignment – React Components
 
-# React + TypeScript + TailwindCSS + Storybook — Frontend Assignment
+This project contains two reusable UI components built with **React**, **TypeScript**, **TailwindCSS**, and documented using **Storybook**.
 
-This repo contains two reusable UI components documented in Storybook:
+## Components
 
-- **InputField** — label, helper/error text, disabled/invalid/loading states, sizes (sm/md/lg), variants (filled/outlined/ghost), optional clear button & password toggle, dark mode support.
-- **DataTable** — tabular display with column sorting, single/multiple row selection, loading and empty states.
+### 1. InputField
+A flexible and accessible input component with validation states.
 
-## Quick Start
+**Features:**
+- Text input with label, placeholder, helper text, error message
+- States: `disabled`, `invalid`, `loading`
+- Variants: `filled`, `outlined`, `ghost`
+- Sizes: `small`, `medium`, `large`
+- Optional: clear button, password toggle
+- Optional: light & dark theme support
+- Accessible with ARIA attributes
 
-```bash
+### 2. DataTable
+A lightweight, generic data table with sorting and selection.
+
+**Features:**
+- Display tabular data
+- Column sorting (asc/desc)
+- Row selection (`single` or `multiple`)
+- Loading state
+- Empty state with custom message
+- Accessible roles (`table`, `row`, `columnheader`, etc.)
+
+---
+
+##  Getting Started
+
+### 1. Clone Repository
+```sh
+git clone https://github.com/umachittudi2004/-Uzence-Design-Studio-Assignment.git
+cd frontend-assignment
+```
+
+### 2. Install Dependencies
+```sh
 npm install
-npm run dev         # App on http://localhost:5173
-npm run storybook   # Storybook on http://localhost:6006
 ```
 
-## Tech Stack
-- React 18 + TypeScript
-- Vite
-- TailwindCSS (dark mode class)
-- Storybook 8 (React + Vite)
-
-## Project Structure
+### 3. Run Locally
+Start the app:
+```sh
+npm run dev
 ```
-src/
-  components/
-    InputField/
-      InputField.tsx
-      InputField.stories.tsx
-    DataTable/
-      DataTable.tsx
-      DataTable.stories.tsx
-  App.tsx
-  main.tsx
-  index.css
-.storybook/
-  main.ts
-  preview.ts
+Storybook:
+```sh
+npm run storybook
 ```
 
-## Accessibility
-- Inputs include `aria-invalid`, `aria-describedby` for helper text.
-- Table headers are interactive buttons for sorting with ▲/▼ indicators.
-- Selection controls support radio/checkbox based on selection mode.
+---
 
-## Theming / Responsiveness
-- Uses Tailwind's `dark` class toggle (see the button in `App.tsx`).
-- Components rely on responsive typography/spacings.
+## 📖 Storybook Documentation
 
-## Deployment
-- **Chromatic:** `npx chromatic --project-token=<token>` (after `npm run build-storybook`).
-- **Vercel:** import the repo and select `npm run build` with output `dist` (Vite) and/or deploy Storybook using `npm run build-storybook` and serve `storybook-static`.
+Each component includes detailed stories covering:
+-  Props & API
+-  States & variants
+-  Interaction behavior
+-  Accessibility (ARIA)
+-  Dark mode theming
+-  Best practices
 
-## Submission Checklist
-- [x] GitHub repository with clean structure
-- [x] README with setup instructions & approach
-- [x] Storybook with props, variants, and states
-- [x] Components implement the requested features
+### Local Storybook
+```sh
+npm run storybook
+```
+
+### Online Preview (Chromatic)
+👉 [View Storybook on Chromatic](https://68a1cf11b7250d0332bd87e8-jrdxxtyiup.chromatic.com/)  
+
+---
+
+## 📤 Deployment
+
+### Build App
+```sh
+npm run build
+```
+
+### Build Storybook
+```sh
+npm run build-storybook
+```
+
+---
+
+## 🌐 Chromatic (Storybook Hosting)
+
+I used **Chromatic** to deploy Storybook.
+
+### Publish Storybook
+```sh
+npm run chromatic
+```
+
+This will:
+- Build & publish your Storybook
+- Provide a unique URL (like above)
+- Run visual regression snapshots
+
+> Already live at:  
+> [https://68a1cf11b7250d0332bd87e8-jrdxxtyiup.chromatic.com/](https://68a1cf11b7250d0332bd87e8-jrdxxtyiup.chromatic.com/)
+
+---
+
+##  Project Structure
+
+```
+frontend-assignment/
+├── .storybook/          # Storybook config
+├── public/              # Static assets
+├── src/
+│   ├── components/
+│   │   ├── InputField/  # InputField component + stories
+│   │   └── DataTable/   # DataTable component + stories
+│   ├── App.tsx          # Demo page
+│   └── index.tsx        # Entry point
+├── package.json
+├── tailwind.config.js
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
+---
+
+##  Approach
+
+- Built with **scalability** in mind (each component in its own folder).
+- Used **TypeScript** for type safety and reusability.
+- Styled with **TailwindCSS** for consistency and theming.
+- Storybook used for **documentation**, **testing states**, and **preview**.
+- Followed **accessibility guidelines** (ARIA roles, error messages, keyboard navigation).
+- Dark mode supported via Tailwind’s `dark` class.

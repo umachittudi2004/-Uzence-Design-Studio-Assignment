@@ -54,7 +54,7 @@ npm run storybook
 
 ---
 
-## 📖 Storybook Documentation
+##  Storybook Documentation
 
 Each component includes detailed stories covering:
 -  Props & API
@@ -74,21 +74,7 @@ npm run storybook
 
 ---
 
-## 📤 Deployment
-
-### Build App
-```sh
-npm run build
-```
-
-### Build Storybook
-```sh
-npm run build-storybook
-```
-
----
-
-## 🌐 Chromatic (Storybook Hosting)
+##  Chromatic (Storybook Hosting)
 
 I used **Chromatic** to deploy Storybook.
 
@@ -136,3 +122,19 @@ frontend-assignment/
 - Storybook used for **documentation**, **testing states**, and **preview**.
 - Followed **accessibility guidelines** (ARIA roles, error messages, keyboard navigation).
 - Dark mode supported via Tailwind’s `dark` class.
+
+...
+
+##  Demo GIFs
+
+### InputField
+- Shows password toggle  
+![InputField Demo](./demo/Password.gif)
+
+### DataTable
+- Shows column sorting and row selection  
+![DataTable Demo](./demo/table.gif)
+
+### Both components
+- Shows both two components
+![Whole Page](./demo/whole.gif)

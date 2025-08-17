@@ -21,17 +21,16 @@ const columns: Column<User>[] = [
 const meta: Meta<typeof DataTable<User>> = {
   title: "Components/DataTable",
   component: DataTable as any,
+  tags: ["autodocs"],
   parameters: { controls: { expanded: true } },
 };
 export default meta;
 type Story = StoryObj<any>;
 
-// Default table
 export const Default: Story = {
   render: () => <DataTable data={data} columns={columns} />,
 };
 
-// Sorting demo
 export const WithSorting: Story = {
   render: () => (
     <DataTable
@@ -41,17 +40,16 @@ export const WithSorting: Story = {
   ),
 };
 
-// Loading state
 export const Loading: Story = {
   render: () => <DataTable data={[]} columns={columns} loading />,
 };
 
-// Empty state
 export const Empty: Story = {
-  render: () => <DataTable data={[]} columns={columns} emptyMessage="No users found!" />,
+  render: () => (
+    <DataTable data={[]} columns={columns} emptyMessage="No users found!" />
+  ),
 };
 
-// Selectable (multiple)
 export const SelectableMultiple: Story = {
   render: () => (
     <DataTable
@@ -59,12 +57,13 @@ export const SelectableMultiple: Story = {
       columns={columns}
       selectable
       selectionMode="multiple"
-      onRowSelect={(rows) => alert("Selected rows: " + rows.map(r => r.name).join(", "))}
+      onRowSelect={(rows) =>
+        alert("Selected rows: " + rows.map((r) => r.name).join(", "))
+      }
     />
   ),
 };
 
-// Selectable (single)
 export const SelectableSingle: Story = {
   render: () => (
     <DataTable

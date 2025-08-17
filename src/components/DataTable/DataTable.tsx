@@ -31,7 +31,7 @@ function DataTable<T extends { id: number | string }>({
   const [sortDir, setSortDir] = useState<"asc" | "desc" | null>(null);
   const [selected, setSelected] = useState<Set<T>>(new Set());
 
-  // Sort rows
+  
   const sorted = useMemo(() => {
     if (!sortKey || !sortDir) return data;
     const copy = [...data];
@@ -51,7 +51,7 @@ function DataTable<T extends { id: number | string }>({
     return copy;
   }, [data, sortKey, sortDir]);
 
-  // Handle column sorting
+  
   const toggleSort = (key: keyof T, sortable?: boolean) => {
     if (sortable === false) return;
     if (sortKey !== key) {
@@ -68,7 +68,6 @@ function DataTable<T extends { id: number | string }>({
     }
   };
 
-  // Handle row selection
   const toggleRow = (row: T) => {
     const next = new Set<T>(selectionMode === "single" ? [] : selected);
     if (selectionMode === "single") {
@@ -81,7 +80,6 @@ function DataTable<T extends { id: number | string }>({
     onRowSelect?.(Array.from(next));
   };
 
-  // ---------------- UI States ----------------
   if (loading) {
     return (
       <div className="flex items-center justify-center p-6">
@@ -101,7 +99,6 @@ function DataTable<T extends { id: number | string }>({
     );
   }
 
-  // ---------------- Table ----------------
   return (
     <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
       <table role="table" className="min-w-full text-sm">

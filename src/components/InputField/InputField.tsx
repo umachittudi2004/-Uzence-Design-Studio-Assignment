@@ -18,7 +18,6 @@ export interface InputFieldProps {
   id?: string;
 }
 
-// Utility classes for sizes & variants
 const sizeClass = (size: "sm" | "md" | "lg" = "md") =>
   size === "sm" ? "input-sm" : size === "lg" ? "input-lg" : "input-md";
 
@@ -56,7 +55,6 @@ const InputField: React.FC<InputFieldProps> = ({
     `input-${label?.toLowerCase().replace(/\s+/g, "-") ||
       Math.random().toString(36).slice(2, 8)}`;
 
-  // Accessibility: pick correct describedBy
   const describedBy =
     invalid && errorMessage
       ? inputId + "-error"
@@ -84,18 +82,19 @@ const InputField: React.FC<InputFieldProps> = ({
           disabled={disabled || loading}
           aria-invalid={invalid ? "true" : undefined}
           aria-describedby={describedBy}
-          aria-errormessage={invalid && errorMessage ? inputId + "-error" : undefined}
+          aria-errormessage={
+            invalid && errorMessage ? inputId + "-error" : undefined
+          }
           className={[
             "input-base",
             sizeClass(size),
             variantClass(variant),
             invalid ? "border-red-500 focus:ring-red-200" : "focus-ring",
-            "pr-16", // spacing for buttons/spinner
+            "pr-16",
           ].join(" ")}
           type={inputType}
         />
 
-        {/* Loading spinner */}
         {loading && (
           <span
             className="absolute inset-y-0 right-2 my-auto h-5 w-5 animate-spin rounded-full border-2 border-gray-300 border-t-transparent"
@@ -103,7 +102,6 @@ const InputField: React.FC<InputFieldProps> = ({
           />
         )}
 
-        {/* Clear button */}
         {clearable && value && !loading && (
           <button
             type="button"
@@ -120,7 +118,6 @@ const InputField: React.FC<InputFieldProps> = ({
           </button>
         )}
 
-        {/* Password toggle */}
         {isPassword && passwordToggle && !loading && (
           <button
             type="button"
@@ -133,7 +130,6 @@ const InputField: React.FC<InputFieldProps> = ({
         )}
       </div>
 
-      {/* Helper or error text */}
       {invalid && errorMessage ? (
         <p
           id={inputId + "-error"}

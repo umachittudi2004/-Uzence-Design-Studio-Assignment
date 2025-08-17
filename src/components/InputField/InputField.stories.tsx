@@ -6,6 +6,7 @@ import "../../index.css";
 const meta: Meta<InputFieldProps> = {
   title: "Components/InputField",
   component: InputField,
+  tags: ["autodocs"],
   parameters: {
     controls: { expanded: true },
   },
@@ -78,7 +79,6 @@ export const WithExtras: Story = {
   },
 };
 
-// New: Helper vs Error text
 export const HelperAndError: Story = {
   render: () => (
     <div className="space-y-4">
@@ -104,7 +104,6 @@ export const HelperAndError: Story = {
   ),
 };
 
-// New: Dark mode preview
 export const DarkMode: Story = {
   render: (args) => (
     <div className="dark bg-gray-900 p-4 space-y-4">

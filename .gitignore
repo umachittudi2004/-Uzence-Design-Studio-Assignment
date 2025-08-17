@@ -1,0 +1,14 @@
+# dependencies
+/node_modules
+
+# production build
+/dist
+/storybook-static
+
+# misc
+.DS_Store
+*.log
+
+# IDE configs
+.vscode/
+.idea/

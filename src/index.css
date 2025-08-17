@@ -1,0 +1,28 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ring: 0 0% 0%;
+}
+
+.input-base {
+  @apply w-full rounded-xl outline-none transition border bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-gray-500;
+}
+.input-filled {
+  @apply bg-gray-100 dark:bg-gray-700 border-transparent;
+}
+.input-outlined {
+  @apply border-gray-300 dark:border-gray-600;
+}
+.input-ghost {
+  @apply border-transparent bg-transparent;
+}
+.input-sm { @apply text-sm px-3 py-2; }
+.input-md { @apply text-base px-3.5 py-2.5; }
+.input-lg { @apply text-lg px-4 py-3; }
+
+.focus-ring {
+  box-shadow: 0 0 0 4px rgba(59,130,246,0.2);
+}
